@@ -20,6 +20,33 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "imperio-das-oticas",
+    title: "Império das Óticas",
+    client: "Distribuidora Império das Óticas",
+    category: "Identidade visual",
+    year: "2026",
+    summary: "Marca de distribuidora de óticas: coroa, azul royal e dourado.",
+    description: [
+      "Identidade visual completa para a Distribuidora Império das Óticas. A coroa virou o símbolo da marca e traduz o nome “Império” de forma direta e memorável.",
+      "O azul royal (#004AAD) é a cor principal e o dourado (#F1A530) aparece no símbolo e nos destaques. A tipografia combina Catchy Mager nos títulos com DM Sans nos textos.",
+      "O projeto inclui versões da logomarca para fundos claros e escuros, reduções do símbolo, ícones e padrão de óculos, além das aplicações na fachada da loja e no vestuário.",
+    ],
+    cover: "/projetos/imperio-das-oticas/11-encerramento.webp",
+    gallery: [
+      "/projetos/imperio-das-oticas/01-capa.webp",
+      "/projetos/imperio-das-oticas/03-logomarca.webp",
+      "/projetos/imperio-das-oticas/04-versoes.webp",
+      "/projetos/imperio-das-oticas/05-simbolo.webp",
+      "/projetos/imperio-das-oticas/06-elementos.webp",
+      "/projetos/imperio-das-oticas/07-paleta.webp",
+      "/projetos/imperio-das-oticas/08-tipografia.webp",
+      "/projetos/imperio-das-oticas/09-fachada.webp",
+      "/projetos/imperio-das-oticas/10-camiseta.webp",
+    ],
+    services: ["Logomarca", "Paleta e tipografia", "Elementos gráficos", "Fachada", "Vestuário"],
+    links: {},
+  },
+  {
     slug: "bewear-shop",
     title: "Bewear Shop",
     client: "Projeto próprio",
