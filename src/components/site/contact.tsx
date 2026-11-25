@@ -19,11 +19,13 @@ export function Contact() {
               <MessageCircle /> WhatsApp {site.whatsappDisplay}
             </a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-violet-300 bg-transparent text-white hover:bg-white/10 hover:text-white">
-            <a href={instagramLink} target="_blank" rel="noopener noreferrer">
-              <AtSign /> @{site.instagram}
-            </a>
-          </Button>
+          {instagramLink && (
+            <Button asChild size="lg" variant="outline" className="border-violet-300 bg-transparent text-white hover:bg-white/10 hover:text-white">
+              <a href={instagramLink} target="_blank" rel="noopener noreferrer">
+                <AtSign /> @{site.instagram}
+              </a>
+            </Button>
+          )}
         </div>
       </div>
     </section>
