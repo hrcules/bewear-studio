@@ -91,6 +91,23 @@ export default async function ProjectPage({ params }: Props) {
         </dl>
       </header>
 
+      {(project.problem || project.result) && (
+        <div className="grid gap-6 md:grid-cols-2">
+          {project.problem && (
+            <section className="flex flex-col gap-3 rounded-3xl border bg-card p-8">
+              <h2 className="text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">O desafio</h2>
+              <p className="text-lg leading-relaxed">{project.problem}</p>
+            </section>
+          )}
+          {project.result && (
+            <section className="flex flex-col gap-3 rounded-3xl border bg-card p-8">
+              <h2 className="text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">O resultado</h2>
+              <p className="text-lg leading-relaxed">{project.result}</p>
+            </section>
+          )}
+        </div>
+      )}
+
       <div className="grid gap-6 md:grid-cols-2">
         {project.gallery.map((src, i) => (
           <div key={src} className={i === 0 ? "md:col-span-2" : undefined}>
@@ -105,6 +122,13 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         ))}
       </div>
+
+      {project.testimonial && (
+        <figure className="flex flex-col gap-4 rounded-3xl bg-secondary p-8 md:p-10">
+          <blockquote className="text-2xl font-semibold leading-snug">“{project.testimonial.quote}”</blockquote>
+          <figcaption className="text-[15px] text-muted-foreground">{project.testimonial.author}</figcaption>
+        </figure>
+      )}
 
       <div className="flex flex-col items-start gap-4 rounded-[2rem] bg-ink p-10 text-ink-foreground md:flex-row md:items-center md:justify-between">
         <p className="text-2xl font-bold">Quer algo assim pro seu negócio?</p>

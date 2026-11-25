@@ -15,7 +15,11 @@ export type Project = {
   coverInvert?: boolean; // inverte a capa (logo preto em fundo escuro)
   gallery: string[];
   services: string[];
-  links?: { behance?: string; live?: string; instagram?: string };
+  // Campos opcionais do case: só aparecem na página quando preenchidos, com informação real.
+  problem?: string; // como era a situação do cliente antes
+  result?: string; // o que mudou depois da entrega
+  testimonial?: { quote: string; author: string }; // só com autorização do cliente
+  links?:{ behance?: string; live?: string; instagram?: string };
 };
 
 export const projects: Project[] = [
