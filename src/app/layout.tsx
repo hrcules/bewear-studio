@@ -13,6 +13,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: { default: `${site.name} · Identidade visual, sites e Instagram`, template: `%s · ${site.name}` },
   description: site.description,
   icons: { icon: "/logo-bewear.png" },

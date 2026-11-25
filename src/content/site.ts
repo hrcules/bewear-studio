@@ -5,7 +5,7 @@ export const site = {
   city: "Patos, PB",
   description:
     "Estúdio de criação em Patos, PB: identidade visual, sites, landing pages e gestão de Instagram para o comércio local.",
-  url: "https://bewearstudio.com.br", // TODO: domínio final
+  url: "https://bewear-studio.vercel.app", // TODO: trocar pelo domínio final quando o Hércules registrar
   whatsapp: "5583999170411",
   whatsappDisplay: "(83) 99917-0411",
   instagram: "_hrcules",

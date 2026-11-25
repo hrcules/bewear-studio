@@ -7,7 +7,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getProject, projects } from "@/content/projects";
-import { whatsappLink } from "@/content/site";
+import { site, whatsappLink } from "@/content/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -19,7 +19,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
-  return { title: project.title, description: project.summary };
+  return {
+    title: project.title,
+    description: project.summary,
+    alternates: { canonical: `/projetos/${project.slug}` },
+    openGraph: {
+      title: `${project.title} · ${site.name}`,
+      description: project.summary,
+      images: [project.gallery[0] ?? project.cover],
+      locale: "pt_BR",
+      type: "article",
+    },
+  };
 }
 
 export default async function ProjectPage({ params }: Props) {
@@ -35,7 +46,7 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <article className="mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-24 pt-10">
-      <Link href="/#portfolio" className="flex w-fit items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary">
+      <Link href="/#portfolio" className="flex w-fit items-center gap-2 py-2.5 text-sm font-medium text-muted-foreground hover:text-primary">
         <ArrowLeft className="size-4" /> Voltar ao portfólio
       </Link>
 
