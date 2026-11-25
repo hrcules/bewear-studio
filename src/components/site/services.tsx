@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { services, type ServiceTone } from "@/content/services";
+import { paymentNote, services, type ServiceTone } from "@/content/services";
 import { whatsappLink } from "@/content/site";
 import { cn } from "@/lib/utils";
 import { SectionHeading } from "./section-heading";
@@ -38,10 +38,14 @@ export function Services() {
                   </ul>
                 </CardContent>
                 <CardFooter className="flex-col items-stretch gap-4">
-                  <p className="text-[15px]">
-                    <span className={t.muted}>a partir de </span>
-                    <strong className="text-xl">{s.price}</strong>
-                  </p>
+                  <div className="flex flex-col gap-1">
+                    <p className="text-[15px]">
+                      <strong className="text-3xl font-extrabold">{s.price}</strong>
+                      {s.priceSuffix && <span className={cn("ml-1", t.muted)}>{s.priceSuffix}</span>}
+                    </p>
+                    <p className={cn("text-sm", t.muted)}>{s.deadline}</p>
+                    {s.note && <p className={cn("text-sm", t.muted)}>{s.note}</p>}
+                  </div>
                   <Button asChild variant={t.button}>
                     <a href={whatsappLink(s.whatsappMessage)} target="_blank" rel="noopener noreferrer">
                       Quero esse
@@ -52,6 +56,7 @@ export function Services() {
             );
           })}
         </div>
+        <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">{paymentNote}</p>
       </div>
     </section>
   );
