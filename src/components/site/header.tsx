@@ -22,7 +22,7 @@ export function Header() {
         </Link>
         <nav className="flex items-center gap-8 text-[15px] font-medium">
           {nav.map((item) => (
-            <Link key={item.href} href={item.href} className="hidden text-zinc-700 transition-colors hover:text-primary md:inline">
+            <Link key={item.href} href={item.href} className="hidden py-2.5 text-zinc-700 transition-colors hover:text-primary md:inline">
               {item.label}
             </Link>
           ))}
