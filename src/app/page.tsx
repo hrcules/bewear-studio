@@ -1,3 +1,4 @@
+import { About } from "@/components/site/about";
 import { Contact } from "@/components/site/contact";
 import { Hero } from "@/components/site/hero";
 import { Portfolio } from "@/components/site/portfolio";
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <About />
       <Services />
       <Portfolio />
       <Process />
