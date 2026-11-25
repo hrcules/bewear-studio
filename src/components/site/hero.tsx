@@ -10,7 +10,7 @@ const chips = ["Logos", "Sites", "Landing pages", "Instagram"];
 export function Hero() {
   return (
     <section id="topo" className="mx-auto grid max-w-6xl items-center gap-14 px-6 pb-24 pt-12 md:pt-20 lg:grid-cols-[1.15fr_1fr]">
-      <div className="flex flex-col gap-7">
+      <div className="flex flex-col gap-7 animate-in fade-in slide-in-from-bottom-4 duration-700">
         <Badge variant="secondary" className="px-4 py-2 text-xs uppercase tracking-[0.12em]">
           Estúdio de criação · {site.city}
         </Badge>
@@ -35,9 +35,10 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-8 rounded-[2rem] bg-ink p-10 md:p-12">
-        <div className="flex aspect-square w-full max-w-sm items-center justify-center rounded-3xl bg-white">
-          <Image src="/logo-bewear.png" alt="Logo Bewear" width={320} height={320} className="h-[82%] w-[82%] object-contain" priority />
+      <div className="flex flex-col items-center gap-8 rounded-[2rem] bg-ink p-10 animate-in fade-in zoom-in-95 duration-700 md:p-12">
+        <div className="relative flex aspect-square w-full max-w-sm items-center justify-center rounded-3xl bg-white">
+          <div aria-hidden className="animate-glow-pulse absolute inset-6 rounded-full bg-primary/25 blur-3xl" />
+          <Image src="/logo-bewear.png" alt="Logo Bewear" width={320} height={320} className="animate-float-logo relative h-[82%] w-[82%] object-contain" priority />
         </div>
         <div className="flex flex-wrap justify-center gap-3">
           {chips.map((c) => (

@@ -20,7 +20,7 @@ export function Portfolio() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
-            <Link key={p.slug} href={`/projetos/${p.slug}`} className="group flex flex-col gap-4">
+            <Link key={p.slug} href={`/projetos/${p.slug}`} className="reveal group flex flex-col gap-4">
               <div
                 className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-muted"
                 style={p.coverBg ? { backgroundColor: p.coverBg } : undefined}
@@ -53,7 +53,7 @@ export function Portfolio() {
             href={whatsappLink("Olá! Quero que meu negócio seja o próximo projeto do Bewear Studio.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex aspect-[4/3] flex-col items-center justify-center gap-3 rounded-3xl border-2 border-dashed border-violet-200 bg-secondary text-center text-secondary-foreground transition-colors hover:border-primary"
+            className="reveal group flex aspect-[4/3] flex-col items-center justify-center gap-3 rounded-3xl border-2 border-dashed border-violet-200 bg-secondary text-center text-secondary-foreground transition-colors hover:border-primary"
           >
             <Plus className="size-8" />
             <span className="text-lg font-semibold">Seu negócio aqui</span>

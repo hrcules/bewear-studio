@@ -22,7 +22,7 @@ export function Services() {
           {services.map((s) => {
             const t = tones[s.tone];
             return (
-              <Card key={s.name} className={cn("gap-5", t.card)}>
+              <Card key={s.name} className={cn("reveal gap-5", t.card)}>
                 <CardHeader>
                   <span className={cn("text-xs font-semibold uppercase tracking-[0.08em]", t.muted)}>{s.tag}</span>
                   <CardTitle>{s.name}</CardTitle>
